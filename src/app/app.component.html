@@ -1,0 +1,45 @@
+<div class="layout">
+<!--  <mat-slide-toggle color="primary" (click)="login()">Connexion en tant qu'admin</mat-slide-toggle>-->
+  <p>
+    <mat-toolbar>
+      <span>
+        <a routerLink="/home">
+          <h1 class="logo">{{titre}}</h1>
+        </a>
+      </span>
+  <span class="example-spacer"></span>
+  <div class="ajouterBtn">
+    <a routerLink="/add">
+      <button mat-flat-button class="add-button">
+        <mat-icon>add</mat-icon>
+        Add Sale Ad
+      </button>
+    </a>
+  </div>
+  <span class="example-spacer"></span>
+  <div class="ajouterBtn">
+    <a routerLink="/user-list">
+      <button mat-flat-button class="add-button">
+        <mat-icon>person</mat-icon>
+        Users
+      </button>
+    </a>
+  </div>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <a *ngIf="!isLoggedIn()" routerLink="/login">Log in</a>
+    <a *ngIf="isLoggedIn()" (click)="logout()">Log out</a>
+  </button>
+  </mat-toolbar>
+  </p>
+  <!--
+  <app-assignments></app-assignments>
+  -->
+  <router-outlet></router-outlet>
+</div>
+

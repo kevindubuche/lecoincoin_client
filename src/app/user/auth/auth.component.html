@@ -1,0 +1,37 @@
+<form ngForm #assignmentForm [formGroup]="usersForm"  class="form" (submit)="onFormSubmit()" >
+  <div class="grid-container">
+    <div></div>
+    <div>
+      <div class="header">Sign in</div>
+      <div class="wecome">
+        <img class="user-avatar" src="https://global-uploads.webflow.com/5e4627609401e01182af1cce/5eb13bfdb4659efea4f8dace_profile-dummy.png" />
+        <p>Welcome !<br>
+          Please sign in to access content !</p>
+      </div>
+      <div >
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input required matInput name="username" placeholder="Username" formControlName="username">
+          <mat-error>
+            <span *ngIf="!usersForm.controls['username'].valid
+            && usersForm.controls['username'].touched "
+            >Please enter the username</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input required matInput name="password" placeholder="Password" formControlName="password">
+          <mat-error>
+            <span *ngIf="!usersForm.controls['password'].valid
+            && usersForm.controls['password'].touched "
+            >Please enter the password</span>
+          </mat-error>
+        </mat-form-field>
+        <button type="submit" class="submit"  >
+          Log in
+        </button>
+      </div>
+      <div class="footer">&copy; All rights reserved lecoincoin</div>
+    </div>
+  </div>
+</form>

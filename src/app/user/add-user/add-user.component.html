@@ -1,0 +1,25 @@
+<script src="add-user.component.ts"></script>
+<form ngForm #assignmentForm [formGroup]="usersForm" class="form" (submit)="onFormSubmit()" >
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input required matInput name="username" placeholder="Username" formControlName="username">
+    <mat-error>
+            <span *ngIf="!usersForm.controls['username'].valid
+            && usersForm.controls['username'].touched "
+            >Please enter the username</span>
+    </mat-error>
+  </mat-form-field><br>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input required matInput name="password" placeholder="Password" formControlName="password">
+    <mat-error>
+            <span *ngIf="!usersForm.controls['password'].valid
+            && usersForm.controls['password'].touched "
+            >Please enter the password</span>
+    </mat-error>
+  </mat-form-field>
+  <button type="submit" mat-stroked-button color="primary">
+    Add user
+  </button>
+
+</form>

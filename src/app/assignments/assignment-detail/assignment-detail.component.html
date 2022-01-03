@@ -1,0 +1,48 @@
+<mat-card *ngIf="assignmentTransmis">
+  <mat-card-title>{{assignmentTransmis.title}}</mat-card-title>
+  <mat-card-subtitle>{{assignmentTransmis.dateCreated | date}}</mat-card-subtitle>
+
+
+  <div class="items" >
+    <div>
+      <img class="product" src="https://picsum.photos/50" />
+    </div>
+    <div class="item-right">
+      <div class="item-right-content">
+        <div><strong>
+          <a routerLink="/assignment/{{assignmentTransmis.id}}">
+            {{assignmentTransmis.title}}
+          </a>
+        </strong><br>{{assignmentTransmis.description}}</div>
+      </div>
+      <div class="item-right-content">
+        <div>{{assignmentTransmis.dateCreated}}
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </div>
+        <div><strong>{{assignmentTransmis.price}} €</strong></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bottom">
+    <mat-checkbox *ngIf='!assignmentTransmis.status' (click)="onAssignmentRendu()">
+      Rendu
+    </mat-checkbox>
+    <!-- Première possibilité
+    <nav>
+      <a [routerLink]="['/assignment', assignmentTransmis.id, 'edit']">
+        <button mat-stroked-button color="primary">EDIT</button>
+      </a>
+    </nav>
+    -->
+
+
+    <!-- Deuxième possibilité : navigation par programme -->
+   <button mat-stroked-button [disabled]="!isAdmin()" color="primary" (click)="onClickEdit()">EDIT</button>
+
+    <button mat-raised-button color="warn" (click)="onDelete()">DELETE</button>
+  </div>
+</mat-card>

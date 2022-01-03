@@ -1,0 +1,25 @@
+<mat-card *ngIf="userTransmis">
+  <mat-card-title>{{userTransmis.username}}</mat-card-title>
+
+
+  <div class="items" >
+    <div>
+      <img class="product" src="https://picsum.photos/50" />
+    </div>
+    <div class="item-right">
+      <div class="item-right-content">
+        <div><strong>
+          <a routerLink="/user/{{userTransmis.id}}">
+            {{userTransmis.username}}
+          </a></strong>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="bottom">
+    <!-- Deuxième possibilité : navigation par programme -->
+    <button mat-stroked-button [disabled]="!isAdmin()" color="primary" (click)="onClickEdit()">EDIT</button>
+
+    <button mat-raised-button color="warn" (click)="onDelete()">DELETE</button>
+  </div>
+</mat-card>

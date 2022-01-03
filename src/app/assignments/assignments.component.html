@@ -1,0 +1,44 @@
+<main class="container">
+  <mat-list *ngFor="let assignment of assignments">
+    <a routerLink="/assignment/{{assignment.id}}">
+      <h3 mat-subheader>{{assignment.dateCreated | date}}</h3>
+      <mat-list-item (click)="assignmentClique(assignment)">
+        <p *ngIf="assignment.status; else nonsoumis" appRendu>
+          {{assignment.title}}
+          Status : {{assignment.status}}</p>
+        <ng-template #nonsoumis >
+          {{assignment.title}} pas encore rendu.
+        </ng-template>
+      </mat-list-item>
+    </a>
+
+    <div class="items" >
+      <div>
+        <img class="product" src="https://picsum.photos/50" />
+      </div>
+      <div class="item-right">
+        <div class="item-right-content">
+          <div><strong>
+            <a routerLink="/assignment/{{assignment.id}}" class="title">
+            {{assignment.title}}
+            </a>
+          </strong><br>{{assignment.description}}</div>
+        </div>
+        <div class="item-right-content">
+          <div>{{assignment.dateCreated}}
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+          <div><strong>{{assignment.price}} €</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+  </mat-list>
+
+
+  <button mat-button (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page précédente</button>
+  <button mat-button (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
+</main>

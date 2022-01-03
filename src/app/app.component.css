@@ -1,0 +1,54 @@
+h1 {
+  color:red;
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+.logo{
+  font-size: 28px;
+  font-weight: bold;
+  font-family:  "Schoolbell";
+  font-style: italic;
+  color: #ff6e14;
+}
+.example-spacer{
+  margin: 30px;
+}
+
+.add-button {
+  background-color: #ff6e14;
+  color: white;
+}
+a{
+  text-decoration: none;
+  color: #ff6e14;
+}
